@@ -1,0 +1,13 @@
+schema {
+  query: Query
+}
+
+enum Department {
+  HR
+  ENGINEERING
+  PRODUCT
+}
+
+type Query {
+  usersCount(departmentFilter: Department): Int!
+}

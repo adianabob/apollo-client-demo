@@ -1,0 +1,79 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks"],
+  "rules": {
+    //React
+    "react/prop-types": "off",
+    "react/display-name": "off",
+    "react/prefer-stateless-function": [
+      "error",
+      { "ignorePureComponents": true }
+    ],
+    "react/no-array-index-key": "error",
+    "react/no-string-refs": "error",
+    "react/self-closing-comp": "error",
+    "react/require-render-return": "error",
+    "react/jsx-boolean-value": ["error", "never"],
+
+    //Hooks
+    "react-hooks/exhaustive-deps": "error",
+
+    //TypeScript
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+
+    //ESLint
+    "eqeqeq": ["error"],
+    "no-return-await": "error",
+    "require-await": "error",
+    "no-debugger": "error",
+    "no-unused-vars": "off",
+    "complexity": [
+      "warn",
+      {
+        "max": 15
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.js"]
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": ["off"]
+      }
+    }
+  ]
+}

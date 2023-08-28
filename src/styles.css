@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  font-family: Inter, serif;
+  font-size: 16px;
+}
+
+#root {
+  white-space: pre-line;
+}
